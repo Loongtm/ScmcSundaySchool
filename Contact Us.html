@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="Contact Us.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="Contact Us.html"><img src="cutlery.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                 <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Gift.html">Gift</a></li>
+                    <li><a href="Event.html">Event</a></li>
+                    <li><a href="About us.html">About Us</a></li>
+                    <li><a href="Contact Us.html">Contact Us</a></li>
+                    <li><a href="Login.php" aria-label="Login">Login</a></li>
+                 </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <div class="text-box">
+        <h1>Contact US</h1>
+        <p>At our Sunday school, we believe in guiding children through their spiritual journey with love and care. <br>Our goal is to inspire them to build a strong, lasting relationship with God, while having fun along the way!</p>
+        <a href="Home.html" class="hero-btn">Visit Us To Know more</a>
+    </div>
+    <!-------contect us--------->
+
+    <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71007.33499077604!2d102.75830616251662!3d2.547778808486224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cfd32f4bdb0141%3A0xa60799dc2deb77d6!2sSegamat%20Chinese%20Methodist%20Church%20(CAC)!5e0!3m2!1szh-CN!2smy!4v1729518648130!5m2!1szh-CN!2smy" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span>
+                        <h5>SCMC SUNDAY SCHOOL</h5>
+                        <p>1, Jalan Aji, 85000 Segamat, Johor</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5>+60 183674968</h5>
+                        <p>Friday, 9:50AM to 12PM</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope-o"></i>
+                    <span>
+                        <h5>yokmeechia@gmail.com</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form id="contact-form">
+                    <h3>GET IN TOUCH</h3>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Email id" required>
+                    <input type="text" id="phone" placeholder="Phone no." required>
+                    <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+                    <button type="submit" class="hero-btn red-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+            var body = 'Name: ' + name + '<br/> Email: ' + email + '<br/> Phone: ' + phone + '<br/> Message: ' + message;
+
+            Email.send({
+                SecureToken: "c0308665-d676-479a-966d-3a40d86b533a", // Replace with your SMTP secure token
+                To: 'yokmeechia@gmail.com',
+                From: "tmloong0128@gmail.com",
+                Subject: "Contact message",
+                Body: body,
+            }).then(
+                function (message) {
+                    if (message === "OK") {
+                        alert("Email sent successfully.");
+                    } else {
+                        console.error("Email sending failed:", message);
+                        alert("Email sending failed. Please check your configuration and try again.");
+                    }
+                }
+            );
+        });
+    });
+</script>
+    
+
+     <!-------footer---------->
+
+     <section class="footer">
+        <h4>About Us</h4>
+        <p>At our Sunday school, we offer a nurturing and faith-centered environment for children to grow spiritually. <br>With classes tailored to various age groups, we aim to provide meaningful lessons <br>and activities that help children understand God's love and teachings.</p>
+        <div class="icons">
+            <a href="https://www.facebook.com/05050509tqn" ><i class="fa fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/p/CuXMTFQSWzA/" ><i class="fa fa-instagram"></i></a>
+            <a href="https://classroom.google.com/?pli=1" ><i class="fa fa-superpowers"></i></a>
+        </div>
+        <p>Made With <i class="fa fa-heart-o"></i> Loong</p>
+    </section>
+
+    <!----------------JavaScript for Toggle Menu------------------->
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px"
+        }
+
+    </script>
+
+
+</body>
+</html>

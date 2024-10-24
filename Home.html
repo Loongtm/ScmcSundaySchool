@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCMC SUNDAY SCHOOL</title>
+    <link rel="stylesheet" href="Home.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+<body>
+
+<header>
+    <a href="#" class="brand">SCMC SUNDAY SCHOOL</a>
+    <div class="menu-btn"></div>
+    <nav class="navigation">
+        <div class="navigation-items">
+            <a href="Home.html" aria-label="Home">Home</a>
+            <a href="Gift.html" aria-label="Gift">Gift</a>
+            <a href="Event.html" aria-label="Event">Event</a>
+            <a href="About us.html" aria-label="About Us">About Us</a>
+            <a href="Contact Us.html" aria-label="Contact Us">Contact Us</a>
+            <a href="Login.php" aria-label="Login">Login</a>
+        </div>
+    </nav>
+</header>
+
+<section class="Home">
+    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="mp5.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="mp4.mp4" autoplay muted loop></video>
+    
+    <div class="content active">
+        <h1>SCMC.<br><span>SUNDAY SCHOOL</span></h1>
+        <p>At our Sunday school, we offer a nurturing and faith-centered environment for children to grow spiritually. With classes tailored to various age groups, we aim to provide meaningful lessons and activities that help children understand God's love and teachings.</p>
+        <a href="About us.html">Read more</a>
+    </div>
+    <div class="content">
+        <h1>Gift.<br><span>Feel Good!</span></h1>
+        <p>Our Small Class is perfect for younger children, focusing on simple Bible stories, songs, and crafts. It's a fun, safe space where kids begin their spiritual journey through creative and interactive learning.</p>
+        <a href="About us.html">Read more</a>
+    </div>
+    <div class="content">
+        <h1>Event.<br><span>New Event?</span></h1>
+        <p>In the Middle Class, children dive deeper into the Bible with engaging lessons, group activities, and discussions. They learn core values and how to apply their faith in everyday situations.</p>
+        <a href="About us.html">Read more</a>
+    </div>
+    <div class="content">
+        <h1>Opening Day.<br><span>SCMC SUNDAY SCHOOL</span></h1>
+        <p>Our Large Class is designed for older children, offering more advanced Bible study, leadership opportunities, and practical applications of their faith. They explore how to live a Christ-centered life and contribute positively to their community.</p>
+        <a href="About us.html">Read more</a>
+    </div>
+    <div class="content">
+        <h1>About Us.<br><span>Know us more!</span></h1>
+        <p>Join our vibrant community where children of all ages come together to learn, grow, and celebrate their faith. Our dedicated teachers and fun-filled curriculum ensure a meaningful and joyful Sunday school experience.</p>
+        <a href="About us.html">Read more</a>
+    </div>
+    <div class="content">
+        <h1>Contact Us<br><span>Let us know our GOD</span></h1>
+        <p>At our Sunday school, we believe in guiding children through their spiritual journey with love and care. Our goal is to inspire them to build a strong, lasting relationship with God, while having fun along the way!</p>
+        <a href="About us.html">Read more</a>
+    </div>
+    
+    <div class="media-icons">
+        <a href="https://www.facebook.com/100033898564484"><i class="fa fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/p/CuXMTFQSWzA/"><i class="fa fa-instagram"></i></a>
+        <a href="https://classroom.google.com/?pli=1"><i class="fa fa-superpowers"></i></a>
+    </div>
+    
+    <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    // JavaScript 代码保持不变
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual) {
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        });
+    });
+</script>
+
+</body>
+</html>
