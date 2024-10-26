@@ -21,28 +21,28 @@
 </head>
 <body>
 
-<header>
-    <a href="#" class="brand">SCMC SUNDAY SCHOOL</a>
-    <div class="menu-btn"></div>
-    <nav class="navigation">
-        <div class="navigation-items">
-            <a href="index.html" aria-label="Home">Home</a>
-            <a href="Gift.html" aria-label="Gift">Gift</a>
-            <a href="Event.html" aria-label="Event">Event</a>
-            <a href="About us.html" aria-label="About Us">About Us</a>
-            <a href="Contact Us.html" aria-label="Contact Us">Contact Us</a>
-            <a href="Login.php" aria-label="Login">Login</a>
+    <header>
+        <a href="#" class="brand">SCMC. SUNDAY SCHOOL</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="Gift.html">Gift</a>
+                <a href="Event.html">Event</a>
+                <a href="About us.html">About Us</a>
+                <a href="Contact Us.html">Contact Us</a>
+                <a href="Login.php" aria-label="Login">Login</a>
+            </div>
         </div>
-    </nav>
-</header>
+    </header>
 
 <section class="Home">
-    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
-    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
-    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
-    <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
-    <video class="video-slide" src="mp5.mp4" autoplay muted loop></video>
-    <video class="video-slide" src="mp4.mp4" autoplay muted loop></video>
+    <video class="video-slide active" src="video/1.mp4" autoplay muted loop></video>
+    <video class="video-slide active" src="video/1.mp4" autoplay muted loop></video>
+    <video class="video-slide active" src="video/1.mp4" autoplay muted loop></video>
+    <video class="video-slide active" src="video/1.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="video/mp5.mp4" autoplay muted loop></video>
+    <video class="video-slide" src="video/mp4.mp4" autoplay muted loop></video>
     
     <div class="content active">
         <h1>SCMC.<br><span>SUNDAY SCHOOL</span></h1>
@@ -94,40 +94,40 @@
 <script type="text/javascript">
     // JavaScript 代码保持不变
     const menuBtn = document.querySelector(".menu-btn");
-    const navigation = document.querySelector(".navigation");
+const navigation = document.querySelector(".navigation");
 
-    menuBtn.addEventListener("click", () => {
-        menuBtn.classList.toggle("active");
-        navigation.classList.toggle("active");
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+});
+
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".video-slide");
+const contents = document.querySelectorAll(".content");
+
+var sliderNav = function(manual) {
+    btns.forEach((btn) => {
+        btn.classList.remove("active");
     });
 
-    const btns = document.querySelectorAll(".nav-btn");
-    const slides = document.querySelectorAll(".video-slide");
-    const contents = document.querySelectorAll(".content");
-
-    var sliderNav = function(manual) {
-        btns.forEach((btn) => {
-            btn.classList.remove("active");
-        });
-
-        slides.forEach((slide) => {
-            slide.classList.remove("active");
-        });
-
-        contents.forEach((content) => {
-            content.classList.remove("active");
-        });
-
-        btns[manual].classList.add("active");
-        slides[manual].classList.add("active");
-        contents[manual].classList.add("active");
-    }
-
-    btns.forEach((btn, i) => {
-        btn.addEventListener("click", () => {
-            sliderNav(i);
-        });
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
     });
+
+    contents.forEach((content) => {
+        content.classList.remove("active");
+    });
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+}
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        sliderNav(i);
+    });
+});
 </script>
 
 </body>
