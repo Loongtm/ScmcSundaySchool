@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <link rel="icon" type="image/jpg" href="logo.jpg">
     <link rel="stylesheet" href="About Us.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,14 +27,14 @@
             <a href="Home.html"><img src="cutlery.png"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
-                 <ul>
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Gift.html">Gift</a></li>
                     <li><a href="Event.html">Event</a></li>
                     <li><a href="About us.html">About Us</a></li>
                     <li><a href="Contact Us.html">Contact Us</a></li>
                     <li><a href="Login.php" aria-label="Login">Login</a></li>
-                 </ul>
+                </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
@@ -106,19 +107,19 @@
 
         <div class="row">
             <div class="website-col">
-                <img src="res.png">
+                <img src="about1.avif">
                 <a href="Home.html" class="layer">
                     <h3>SCMC SUNDAY SCHOOL</h3>
                 </a>
             </div>
             <div class="website-col">
-                <img src="event.png">
+                <img src="about2.jpg">
                 <a href="Gift.html" class="layer">
                     <h3>GIFT</h3>
                 </a>
             </div>
             <div class="website-col">
-                <img src="cute2.png">
+                <img src="about3.avif">
                 <a href="Contact Us.html" class="layer">
                     <h3>CONTACT US</h3>
                 </a>
@@ -223,13 +224,15 @@
     <!----------------JavaScript for Toggle Menu------------------->
     <script>
 
-        var navLinks = document.getElementById("navLinks");
-        function showMenu(){
-            navLinks.style.right = "0";
-        }
-        function hideMenu(){
-            navLinks.style.right = "-200px"
-        }
+var navLinks = document.getElementById("navLinks");
+
+function showMenu() {
+    navLinks.style.right = "0"; // 显示菜单
+}
+
+function hideMenu() {
+    navLinks.style.right = "-200px"; // 隐藏菜单
+}
 
     </script>
 

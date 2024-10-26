@@ -97,7 +97,7 @@ nav .fa{
         margin-left: -40px;
     }
     .nav-links{
-        position: absolute;
+        position: fixed;
         background: #f44336;
         height: 100vh;
         width: 200px;
@@ -362,4 +362,20 @@ h3{
 }
 .p audio{
 	text-align: center;
+}
+
+.slider-wrapper {
+    width: 100%; /* 确保滑动器宽度为100% */
+    overflow: hidden; /* 隐藏溢出内容 */
+}
+
+.slider {
+    display: flex; /* 使用flex布局 */
+    width: 100%; /* 确保宽度为100% */
+}
+
+.slider img {
+    width: 100%; /* 使图片宽度为100% */
+    height: auto; /* 高度自适应 */
+    object-fit: cover; /* 保持图片比例并覆盖 */
 }

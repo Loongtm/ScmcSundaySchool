@@ -220,7 +220,7 @@ section{
 }
 
 @media (max-width: 1040px) {
-    header {
+    header{
         padding: 12px 20px;
     }
 
@@ -245,7 +245,14 @@ section{
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgba(1, 1, 1, 0.5);
+        background: rgba(255, 255, 255, 0.9); /* 白色背景 */
+        z-index: 1000; /* 确保在其他元素之上 */
+    }
+
+    header .navigation .navigation-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     header .navigation .navigation-items a {

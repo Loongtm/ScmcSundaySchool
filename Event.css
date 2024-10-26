@@ -65,7 +65,7 @@ body{
     font-family: monospace;
 }
 .slider{
-    width: 2300px;
+    width: 100%;
     max-width: 1519px;
     height: 500px;
     margin: auto;
