@@ -275,39 +275,52 @@
     
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('contact-form').addEventListener('submit', function (e) {
-                e.preventDefault();
-    
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var message = document.getElementById('adress').value;
-                var body = 'Name: ' + name + '<br/> Email: ' + email + '<br/> Adress: ' + message;
-    
-                Email.send({
-                    SecureToken: "99be8757-ff13-46a0-9c62-3cc56b8140e0", // Replace with your SMTP secure token
-                    To: 'yingheng051105@gmail.com',
-                    From: "yingning5688@gmail.com",
-                    Subject: "Contact message",
-                    Body: body,
-                }).then(
-                    function (message) {
-                        if (message === "OK") {
-                            alert("Email sent successfully.");
-                        } else {
-                            console.error("Email sending failed:", message);
-                            alert("Email sending failed. Please check your configuration and try again.");
-                        }
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 处理联系表单提交
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('adress').value;
+            var body = 'Name: ' + name + '<br/> Email: ' + email + '<br/> Adress: ' + message;
+
+            Email.send({
+                SecureToken: "99be8757-ff13-46a0-9c62-3cc56b8140e0", // 替换为您的SMTP安全令牌
+                To: 'yingheng051105@gmail.com',
+                From: "yingning5688@gmail.com",
+                Subject: "Contact message",
+                Body: body,
+            }).then(
+                function (message) {
+                    if (message === "OK") {
+                        alert("Email sent successfully.");
+                    } else {
+                        console.error("Email sending failed:", message);
+                        alert("Email sending failed. Please check your configuration and try again.");
                     }
-                );
+                }
+            );
+        });
+
+        // 处理卡片的可见性
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // 添加可见类
+                    observer.unobserve(entry.target); // 一旦可见，就停止观察
+                }
             });
         });
-    </script>
 
-
-
-
+        cards.forEach(card => {
+            observer.observe(card); // 观察每个卡片
+        });
+    });
+</script>
 
 </div>
 <footer>
@@ -325,7 +338,7 @@
         menuBtn.classList.toggle("active");
         navigation.classList.toggle("active");
     });
-5
+
     //Javacript for video slider navigation
     const btns = document.querySelectorAll(".nav-btn");
     const slides = document.querySelectorAll(".video-slide");

@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap);
 
 *{
@@ -268,8 +269,8 @@ p{
     border-radius: 15px;
   }
   .about_column img {
-    width: 500px;
-    height: 500px;
+    width: 510px;
+    height: 510px;
     border-radius: 50%;
     object-fit: fill;
     margin: auto;
@@ -432,4 +433,15 @@ p{
       background-position: center;
       transition: 0.3s ease;
   }
+}
+
+.card {
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for smooth effect */
+}
+
+.card.visible {
+  opacity: 1; /* Make visible */
+  transform: translateX(0); /* Slide in */
 }
