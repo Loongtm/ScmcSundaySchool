@@ -288,7 +288,7 @@ h3{
 
 /*-------call to action-------*/
 
-.cta{
+.cta {
     margin: 100px auto;
     width: 80%;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(about/AboutUsBelow.jpg);
@@ -296,17 +296,28 @@ h3{
     background-size: cover;
     border-radius: 10px;
     text-align: center;
-    padding: 100px 0    ;
+    padding: 100px 0;
 }
-.cta h1{
+.cta h1 {
     color: #fff;
     margin-bottom: 40px;
     padding: 0;
+}
+.cta p audio {
+    width: 30%; /* 默认宽度为30% */
+    max-width: 30%; /* 最大宽度为30% */
+    box-sizing: border-box; /* 包括内边距和边框在内计算宽度 */
+    margin-top: 20px; /* 可选：添加一些上边距以增加美观 */
 }
 
 @media(max-width: 700px){
     .cta h1{
         font-size: 24px;
+    }
+
+    .cta p audio {
+        width: 100%; /* 在小屏幕上宽度为100% */
+        max-width: 100%; /* 最大宽度为100% */
     }
 }
 
